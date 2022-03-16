@@ -30,7 +30,7 @@ namespace movieflix_api.Controllers
         [HttpGet("{title}")]    // decoration 2 - same as the input parameter
         public ActionResult<Movie> MyMovie(string title)
         {
-            var movie = new Movie { Id = 3, Title = "Haider" };
+            var movie = new Movie { Id = 10, Title = "Haider" };
             return Ok(movie);
         }
 
