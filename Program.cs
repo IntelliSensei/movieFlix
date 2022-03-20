@@ -7,6 +7,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var reactApp = "_reactAppPolicy";   // setting up CORS-policy
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: reactApp, builder =>
+    {
+        builder.WithOrigins("*");   // allow all * 
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -17,6 +27,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(reactApp);      // use the CORS-policy from above
 
 app.UseAuthorization();
 

@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "title": "Batman Begins",
+        "releaseYear": 2005,
+        "length": "2 HR 14 MIN",
+        "director": "Christopher Nolan",
+        "genre": "Action/Adventure",
+        "imageUrl": ""
+    },
+    {
+        "id": 2,
+        "title": "The Dark Knight",
+        "releaseYear": 2008,
+        "length": "2 HR 25 MIN",
+        "director": "Christopher Nolan",
+        "genre": "Action/Adventure",
+        "imageUrl": ""
+    },
+    {
+        "id": 3,
+        "title": "The Bucket List",
+        "releaseYear": 2007,
+        "length": "1 HR 33 MIN",
+        "director": "Rob Reiner",
+        "genre": "Drama/Komedi",
+        "imageUrl": ""
+    },
+    {
+        "id": 4,
+        "title": "The Matrix Resurrections",
+        "releaseYear": 2021,
+        "length": "2 HR 27 MIN",
+        "director": "Lana Wachowski",
+        "genre": "Action/Adventure/Sci-Fi",
+        "imageUrl": ""
+    },
+    {
+        "id": 5,
+        "title": "Sully",
+        "releaseYear": 2016,
+        "length": "1 HR 31 MIN",
+        "director": "Clint Eastwood",
+        "genre": "Drama",
+        "imageUrl": ""
+    },
+    {
+        "id": 6,
+        "title": "The Shining",
+        "releaseYear": 1980,
+        "length": "1 HR 54 MIN",
+        "director": "Stanley Kubrick",
+        "genre": "Skräck",
+        "imageUrl": ""
+    }
+]
