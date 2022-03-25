@@ -1,6 +1,17 @@
+// add EF Core:
+using Microsoft.EntityFrameworkCore;
+using movieflix_api.API_Data;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+
+builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(     // set class DataContext as database-context (use SQL-server)
+builder.Configuration.GetConnectionString("DefaultConnection")                  // setup connection-string to SQL ("DefaultConnection")
+));
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
