@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using movieflix_api.API_Data;   // link to data-loader
 using movieflix_api.Model;      // link to Movie-class
 
@@ -14,6 +15,16 @@ namespace movieflix_api.Controllers
 
     public class MovieController : ControllerBase
     {
+
+        private readonly DataContext _context;      // field
+
+
+        public MovieController(DataContext context) // ctor that sets its in-parameter equal to field (use anywhere in the class) ...
+                                                    // ... each class-instance MUST take this in-parameter (DB connection)
+        {
+            _context = context;
+        }
+
 
         [HttpGet()]             // decoration 1
         public async Task<ActionResult<IEnumerable<Movie>>> MoviesList()    // add ActionResult<> to the return ...
@@ -32,9 +43,11 @@ namespace movieflix_api.Controllers
 
             // SOFTCODED //
 
-            var movies = await LoadData.LoadMovies();       // load data from LoadData > LoadMovies
+            //var movies = await LoadData.LoadMovies();         // load data from LoadData > LoadMovies
 
-            return Ok(movies);                              // add 'Ok' to return
+            var movies = await _context.Movies.ToListAsync();   // fetch data from the Azure DB (not locally)  
+
+            return Ok(movies);                                  // add 'Ok' to return
         }
 
 
