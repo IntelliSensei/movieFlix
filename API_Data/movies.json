@@ -6,7 +6,8 @@
         "length": "2 HR 14 MIN",
         "director": "Christopher Nolan",
         "genre": "Action/Adventure",
-        "imageUrl": "B0093UHL2S.01._SCLZZZZZZZ_SX500_.jpg"
+        "imageUrl": "https://en.wikipedia.org/wiki/Batman_Begins#/media/File:Batman_Begins_Poster.jpg"
+        
     },
     {
         "id": 2,
@@ -15,7 +16,7 @@
         "length": "2 HR 25 MIN",
         "director": "Christopher Nolan",
         "genre": "Action/Adventure",
-        "imageUrl": ""
+        "imageUrl": "https://en.wikipedia.org/wiki/The_Dark_Knight_(film)#/media/File:The_Dark_Knight_(2008_film).jpg"
     },
     {
         "id": 3,
