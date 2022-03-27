@@ -11,7 +11,7 @@ using movieflix_api.API_Data;
 namespace movieflix_api.API_Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220326145823_InitialCreate")]
+    [Migration("20220327123009_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
