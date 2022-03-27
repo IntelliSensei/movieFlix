@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'movieflixapi'
           slot-name: 'Development'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_005749B665ED49ABBFAE5C093D4A07AB }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5D99FEE6481648B199C9F0D2FE8EAEBD }}
           package: .
