@@ -11,10 +11,11 @@ namespace movieflix_api.API_Data
     public class DataContext : DbContext
     {
 
-        // property (special with lambda): fetch table-structure (Movie.cs)
+        // property (special with lambda) > create DbSet = table called Movie (Movie-model)
         // avoid nullable-issue: lambda-expression = if 'Movies' is null ...
         // ... set Movie-object to empty and return it as empty object (non-null)
         public DbSet<Movie> Movies => Set<Movie>();
+        public DbSet<Genre> Genres => Set<Genre>();
 
 
         // constructor: input-parameter 'options' (connection strings)

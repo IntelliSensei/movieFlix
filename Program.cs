@@ -37,11 +37,11 @@ var app = builder.Build();  // build the app based on above building-blocks
 
 
 // dependency injection:
-using var scope = app.Services.CreateScope();               // 'using' = creating a validity-scope (for a Service)
-var services = scope.ServiceProvider;                       // ServiceProvider = allows us to instantiate any class (that we want to inject somewhere else (dependency))
-var context = services.GetRequiredService<DataContext>();   // GetRequiredService<class> = gets us an instance of the class (DB connection)
-await LoadData.LoadMovies(context);                         // the instantiated class (containing the DB connection) is passed into LoadMovies-method 
-                                                            // allows LoadMovies to connect with DB at app-startup to perform data-checks (present or not)
+// using var scope = app.Services.CreateScope();               // 'using' = creating a validity-scope (for a Service)
+// var services = scope.ServiceProvider;                       // ServiceProvider = allows us to instantiate any class (that we want to inject somewhere else (dependency))
+// var context = services.GetRequiredService<DataContext>();   // GetRequiredService<class> = gets us an instance of the class (DB connection)
+// await LoadData.LoadMovies(context);                         // the instantiated class (containing the DB connection) is passed into LoadMovies-method 
+// allows LoadMovies to connect with DB at app-startup to perform data-checks (present or not)
 
 
 // context.Database.ExecuteSqlRaw("SET IDENTITY_INSERT dbo.Movies ON;");
