@@ -64,8 +64,9 @@ namespace movieflix_api.Controllers
         [HttpGet()]     // fetch list of movies from DB
         public async Task<ActionResult<List<ListMovieViewModel>>> ListMovies()
         {
-            var movies = await _context.Movies.ToListAsync();   // list all returned movies from DB
-            var movieList = new List<ListMovieViewModel>();     // create empty list
+            var movies = await _context.Movies.Include(c => c.Genre).ToListAsync();   // list all returned movies from DB ..
+                                                                                      // .. "Include(c => c.Genre)" = go to Genre and join with Movies (list of genres for a movie)
+            var movieList = new List<ListMovieViewModel>();                           // create empty list
 
             foreach (var movie in movies)
             {
