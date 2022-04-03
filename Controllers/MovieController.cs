@@ -26,38 +26,38 @@ namespace movieflix_api.Controllers
 
 
         #region HttpGet (basic) 
-        [HttpGet()]             // decoration 1
-        public async Task<ActionResult<IEnumerable<Movie>>> MoviesList()    // add ActionResult<> to the return ...
-                                                                            // ... inside, replace string-type with Movie-type ...
-                                                                            // ... wrap everything with Task = Task will return an ActionResult, of type IEnum., containing Movie-type ...
-                                                                            // ... Task = new thread to execute a set of code and return everything within Task<> ...
-                                                                            // ... used to avoid queue-buildups
-        {
-            // HARDCODED //
-            #region 
-            // var movies = new List<Movie>();                             // ... here too
-            // movies.Add(new Movie { Id = 1, Title = "Aar ya paar" });    // add new Movie-objects with properties Id and Title to the list
-            // movies.Add(new Movie { Id = 2, Title = "Aankhen" });
-            #endregion
+        //[HttpGet()]             // decoration 1
+        // public async Task<ActionResult<IEnumerable<Movie>>> MoviesList()    // add ActionResult<> to the return ...
+        // ... inside, replace string-type with Movie-type ...
+        // ... wrap everything with Task = Task will return an ActionResult, of type IEnum., containing Movie-type ...
+        // ... Task = new thread to execute a set of code and return everything within Task<> ...
+        // ... used to avoid queue-buildups
+        // {
+        //     // HARDCODED //
+        //     #region 
+        //     // var movies = new List<Movie>();                             // ... here too
+        //     // movies.Add(new Movie { Id = 1, Title = "Aar ya paar" });    // add new Movie-objects with properties Id and Title to the list
+        //     // movies.Add(new Movie { Id = 2, Title = "Aankhen" });
+        //     #endregion
 
 
-            // SOFTCODED //
+        //     // SOFTCODED //
 
-            //var movies = await LoadData.LoadMovies();         // load data from LoadData > LoadMovies
+        //     //var movies = await LoadData.LoadMovies();         // load data from LoadData > LoadMovies
 
-            var movies = await _context.Movies.ToListAsync();   // fetch data from the Azure DB (not locally)  
+        //     var movies = await _context.Movies.ToListAsync();   // fetch data from the Azure DB (not locally)  
 
-            return Ok(movies);                                  // add 'Ok' to return
-        }
+        //     return Ok(movies);                                  // add 'Ok' to return
+        // }
         #endregion
 
         #region HttpGet + parameter (basic)
-        [HttpGet("{title}")]    // decoration 2 - same as the input parameter
-        public ActionResult<Movie> MyMovie(string title)
-        {
-            var movie = new Movie { Id = 10, Title = "Haider" };
-            return Ok(movie);
-        }
+        //[HttpGet("{title}")]    // decoration 2 - same as the input parameter
+        // public ActionResult<Movie> MyMovie(string title)
+        // {
+        //     var movie = new Movie { Id = 10, Title = "Haider" };
+        //     return Ok(movie);
+        // }
         #endregion
 
 
